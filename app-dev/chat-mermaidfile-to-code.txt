@@ -1,1 +1,1 @@
-@workspace Generate a Java class diagram based on #file:sample-class-diagram.md
+Generate a Java class diagram based on #file:sample-class-diagram.md
