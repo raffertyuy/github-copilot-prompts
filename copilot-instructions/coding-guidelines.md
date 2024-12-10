@@ -1,7 +1,6 @@
 # Coding Guidelines
 
 ## Naming Standards
-- All names should be snake_case.
 - Names should not be abbreviated.
 
 ## Magic Strings
