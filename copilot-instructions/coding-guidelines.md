@@ -1,8 +1,9 @@
 # Coding Guidelines
 
-## Naming Standards
-- All names should be snake_case.
-- Names should not be abbreviated.
+## Clean and Readable Code
+- Naming should be readable and should not be abbreviated.
+- For class/method/function definitions, Docstring-style comments are required.
+- For in-line code comments, suggest to clean/refactor the code to make it more readable without the need for comments.
 
 ## Magic Strings
 - Avoid using magic strings. Either parameterize or create constants.

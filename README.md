@@ -21,13 +21,13 @@ Each file will have a prefix:
 ### `/copilot-instructions`
 The `/copilot-instructions` folder contains sample `.md` files to be used with GitHub Copilot specific features.
 1. `copilot-instructions.md` - contains a sample file to be used with [GitHub Copilot Custom Instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot). This file should be placed in the `.github` folder of your repo.
-2. `coding-guidelines.md` - contains a sample file to be used with [Github Copilot Code Review, for VS Code](https://docs.github.com/en/copilot/using-github-copilot/code-review/using-copilot-code-review). This is configured by adding the following lines in VSCode JSON settings:
+2. `coding-guidelines.md` - contains a sample file to be used with [Github Copilot Code Review, for VS Code](https://docs.github.com/en/copilot/using-github-copilot/code-review/using-copilot-code-review). This is my VSCode JSON settings configuration:
     ```json
     {
         ...
         "github.copilot.chat.reviewSelection.instructions": [
           {
-            "file": ".github/coding-guidelines.md"
+            "file": "../../../../../GitRepos/GH-Public/github-copilot-prompts/copilot-instructions/coding-guidelines.md"
           }
         ]
         ...
