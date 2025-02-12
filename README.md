@@ -13,6 +13,7 @@ So that I can freely add prompts with minimal effort to update this readme, I wi
 Each file will have a prefix:
 - `editor-` - indicates that the prompt is typed directly in the code editor (also known as GitHub Copilot code completion). In most cases, these files will have the file extension of the programming language that the prompt is for (e.g. `.js` for Javascript, `.py` for Python, etc.).
 - `chat-` - indicates that the prompt is used in GitHub Copilot Chat or CMD/CTRL+I. Since these prompts are for chat, the file extensions are in `.txt`.
+- `edits-` - indicates that the prompt is used in Copilot Edits.
 - `sample-` - is not a prompt, but a file that other prompts might use.
 
 > [!NOTE]
