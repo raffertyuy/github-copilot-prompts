@@ -1,0 +1,1 @@
+Start with a summary of the changes, with Gen-alpha or Gen-Z slangs and emoticons. Then followw with a list of bullet points detailing the files changed, what was changed, and the reason for the change.
