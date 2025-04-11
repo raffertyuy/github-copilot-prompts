@@ -1,0 +1,127 @@
+name: Publish Copilot Prompts (to TARGET_REPOSITORIES)
+
+on:
+  push:
+    paths:
+      - '.github/**/*.md'
+  workflow_dispatch:
+
+jobs:
+  sync-copilot-prompts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Publish to target repositories
+        env:
+          TARGET_REPOS: ${{ secrets.TARGET_REPOSITORIES }}
+        run: |
+          # Create and store base working directory
+          base_dir=$(mktemp -d)
+          echo "Base directory: $base_dir"
+          initial_dir=$(pwd)
+
+          # Validate JSON format
+          if ! echo "$TARGET_REPOS" | jq -e . >/dev/null 2>&1; then
+            echo "::error::Invalid JSON format in TARGET_REPOSITORIES secret"
+            exit 1
+          fi
+
+          # Process each repository
+          echo "$TARGET_REPOS" | jq -c '.[]' | while read -r repo; do
+            # Always ensure we're in base_dir
+            cd "$base_dir" || {
+              echo "::error::Failed to change to base directory"
+              exit 1
+            }
+            
+            # Extract repo details
+            url=$(echo $repo | jq -r '.url')
+            pat=$(echo $repo | jq -r '.pat')
+            repo_dir="$base_dir/repo_$(date +%s%N)"
+            changes_detected="false"
+            
+            echo "Processing repository: $url in $repo_dir"
+            
+            # Clone target repository
+            if ! git clone "https://x-access-token:$pat@${url#https://}" "$repo_dir"; then
+              echo "::error::Failed to clone repository $url"
+              continue
+            fi
+            
+            # Return to initial directory for file operations
+            cd "$initial_dir" || {
+              echo "::error::Failed to return to initial directory"
+              exit 1
+            }
+            
+            # Create .github directory if needed
+            mkdir -p "$repo_dir/.github"
+            
+            # Track changes
+            declare -a added_files=()
+            declare -a modified_files=()
+            
+            # Copy markdown files
+            while IFS= read -r source_file; do
+              target_file="$repo_dir/$source_file"
+              target_dir=$(dirname "$target_file")
+              mkdir -p "$target_dir"
+              
+              if [ -f "$target_file" ]; then
+                if ! cmp -s "$source_file" "$target_file"; then
+                  cp "$source_file" "$target_file"
+                  modified_files+=("$source_file")
+                  changes_detected="true"
+                fi
+              else
+                cp "$source_file" "$target_file"
+                added_files+=("$source_file")
+                changes_detected="true"
+              fi
+            done < <(find .github -name "*.md" -type f)
+            
+            # Commit and push if changes detected
+            if [ "$changes_detected" = "true" ]; then
+              cd "$repo_dir" || {
+                echo "::error::Failed to change to repo directory"
+                exit 1
+              }
+              
+              git add .
+              git commit -m "$(echo -e "Sync GitHub Copilot prompts\n\n$(
+                if [ ${#added_files[@]} -gt 0 ]; then
+                  echo "### Added files:"
+                  printf "  - %s\n" "${added_files[@]}"
+                fi
+                if [ ${#modified_files[@]} -gt 0 ]; then
+                  echo "### Modified files:"
+                  printf "  - %s\n" "${modified_files[@]}"
+                fi
+                echo "\nSynced from ${GITHUB_REPOSITORY} at commit ${GITHUB_SHA}"
+              )")"
+              
+              if git push; then
+                echo "✅ Successfully synced files to $url"
+              else
+                echo "::error::Failed to push changes to $url"
+              fi
+            else
+              echo "No changes detected for $url"
+            fi
+            
+            # Cleanup repository directory
+            cd "$base_dir" || true
+            rm -rf "$repo_dir"
+          done
+
+          # Final cleanup from known location
+          rm -rf "$base_dir"

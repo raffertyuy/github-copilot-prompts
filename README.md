@@ -34,3 +34,33 @@ The `/copilot-instructions` folder contains sample `.md` files to be used with G
         ...
     }
     ```
+
+## GitHub Actions
+This repo contains an experimental github action that will push the custom prompts in `/.github/**/*.md` to a list of target repos.
+
+```mermaid
+graph LR
+    A[Source Repo] -->|Get .md files| B[.github/*.md]
+    B --> C{Sync to Target Repos}
+    C -->|Copy| D[Target Repo 1]
+    C -->|Copy| E[Target Repo 2]
+    C -->|Copy| F[Target Repo n]
+```
+
+> [!NOTE]
+> At this time, I am assuming that direct push to the main branch is possible. If branching is required for the target repo, this experimental workflow needs to be revised.
+
+This requires to set a GitHub Actions secret called `TARGET_REPOSITORIES`, with a JSON array of the target repositories.  For example:
+
+```json
+[
+  {
+    "url": "github.com/octodemo/bookstore-raffertyuy",
+    "pat": "PAT_HERE"
+  },
+  {
+    "url": "dev.azure.com/raztype/Bookstore/_git/Bookstore",
+    "pat": "PAT_HERE"
+  }
+]
+```
