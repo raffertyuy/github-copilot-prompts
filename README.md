@@ -3,10 +3,10 @@
 This repo contains my collection of GitHub Copilot prompts for my personal learning and reference. I'm making this repo public in the hope that it may be useful to others.
 
 The way this repo is structured is by _persona_:
-- `/app-dev` - contains prompts useful for application developers,
-- `/test-engineer` - contains prompts useful for test engineers,
-- `/infra-engineer` - contains prompts useful for infrastructure engineers,
-- `/ai-engineer` - contains prompts useful for AI/ML engineers,
+- `app-dev/` - contains prompts useful for application developers,
+- `test-engineer/` - contains prompts useful for test engineers,
+- `infra-engineer/` - contains prompts useful for infrastructure engineers,
+- `ai-engineer/` - contains prompts useful for AI/ML engineers,
 - and so on...
 
 So that I can freely add prompts with minimal effort to update this readme, I will also make the file names as descriptive as possible.
@@ -19,21 +19,10 @@ Each file will have a prefix:
 > [!NOTE]
 > The prompts in this repo are mostly tested using VSCode with an GitHub Copilot Individual/Business license. I will indicate if there is a prompt that requires GitHub Enterprise.
 
-### `/copilot-instructions`
-The `/copilot-instructions` folder contains sample `.md` files to be used with GitHub Copilot specific features.
-1. `copilot-instructions.md` - contains a sample file to be used with [GitHub Copilot Custom Instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot). This file should be placed in the `.github` folder of your repo.
-2. `coding-guidelines.md` - contains a sample file to be used with [Github Copilot Code Review, for VS Code](https://docs.github.com/en/copilot/using-github-copilot/code-review/using-copilot-code-review). This is my VSCode JSON settings configuration:
-    ```json
-    {
-        ...
-        "github.copilot.chat.reviewSelection.instructions": [
-          {
-            "file": "../../../../../GitRepos/GH-Public/github-copilot-prompts/copilot-instructions/coding-guidelines.md"
-          }
-        ]
-        ...
-    }
-    ```
+
+## .github/ Folder
+My `.github/` folder is organized according to my point of view on how it should be organized and potentially shared to large dev teams. I posted the TL;DR of my thoughts in this [blog](https://raffertyuy.com/raztype/ghcp-custom-prompts-structure/).
+
 
 ## GitHub Actions
 This repo contains an experimental github action that will push the custom prompts in `/.github/**/*.md` to a list of target repos.
