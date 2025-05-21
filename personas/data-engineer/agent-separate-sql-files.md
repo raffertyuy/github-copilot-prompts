@@ -1,7 +1,7 @@
-Generate separate .sql files for the database `sample-db-create.sql`
+Generate separate .sql files for the database defined in [sample-db-create.sql](/docs/postgres-db/sample-db-create.sql).
 
 ## First, analyze deeply
-Analyze the relationship between the tables using `sample-db-schema.png` before generating any .sql file.
+Analyze the relationship between the tables by checking the [sample-db-schema.png](/docs/postgres-db/sample-db-schema.png) before generating any .sql file.
 
 ## File output rules
 - Output into a new `/sample-outputs/sql-files` folder

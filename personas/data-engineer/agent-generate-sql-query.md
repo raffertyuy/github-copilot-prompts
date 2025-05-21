@@ -1,7 +1,6 @@
 ## Instructions
-- Use Copilot Edits
-- Reference the prompt `data-engineer.prompt.md`
-- Toggle Agent mode
+- Use Agent Mode
+- Refer to `agent.data-engineer.prompt.md` by typing `/agent.data-engineer` in the chat
 
 This ensures that GitHub Copilot refers to the DB Schema (in png and sql files)
 
@@ -23,7 +22,7 @@ This ensures that GitHub Copilot refers to the DB Schema (in png and sql files)
 ```
 Generate a new python notebook `output-notebook.ipynb`. This notebook should read the `sample-query-output.csv` and create a graph that shows the top film category by country.
 
-Use the root folder `/data-engineer/sample-outputs` for all outputs.
+Use the root folder `/sample-outputs` for all outputs.
 If running a CLI command, ensure that you are in this directory first.
 - Check that you are in this specified root folder directory.
 - If not, switch to this directory.

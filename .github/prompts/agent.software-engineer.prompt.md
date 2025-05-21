@@ -1,4 +1,4 @@
-You will be tasked to fix an issue from an open-source repository.
+[agent-instructions](../prompt-snippets/agent-instructions.md)
 
 Your thinking should be thorough and so it's fine if it's very long. You can think step by step before and after each action you decide to take.
 

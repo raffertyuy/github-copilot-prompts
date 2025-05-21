@@ -1,3 +1,5 @@
+[agent-instructions](../prompt-snippets/agent-instructions.md)
+
 Generate SQL statements for Postgres database.
 The schema of this database is found in this [diagram](/data-engineer/sample-db-schema.png) file.
 For additional reference, the database schema backup is also scripted in this [SQL file](/data-engineer/sample-db-create.sql).
@@ -10,4 +12,3 @@ Before generating SQL statements:
 
 ## File output instructions
 For all new files that will be created, place in the `/data-engineer/sample-outputs` directory.
-For example, if a new `create_table.sql` file is generated, this file should be saved in `/data-engineer/sample-outputs/create_table.sql`
