@@ -21,8 +21,10 @@ Each file will have a prefix:
 
 
 ## .github/ Folder
-My `.github/` folder is organized according to my point of view on how it should be organized and potentially shared to large dev teams. I posted the TL;DR of my thoughts in this [blog](https://raffertyuy.com/raztype/ghcp-custom-prompts-structure/).
+My `.github/` folder is organized according to my point of view on how it should be organized and potentially shared to large dev teams. I posted the TL;DR of my thoughts in this [blog](https://raffertyuy.com/raztype/ghcp-custom-prompts-structure/), but note that this repo is more updated than the blog.
 
+>[!NOTE]
+> Not all of the prompt files in the `.github/` folder are my own. Many are copied from other sources such as [VS Code](https://code.visualstudio.com/docs/copilot/copilot-customization) and [Open AI](https://cookbook.openai.com/examples/gpt4-1_prompting_guide). 
 
 ## GitHub Actions
 This repo contains an experimental github action that will push the custom prompts in `/.github/**/*.md` to a list of target repos.
