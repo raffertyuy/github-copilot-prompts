@@ -2,6 +2,9 @@
 
 This repo contains my collection of GitHub Copilot prompts for my personal learning and reference. I'm making this repo public in the hope that it may be useful to others.
 
+> [!WARNING]
+> I use this repo frequently for my demos as I share my learnings with others. You might see small changes from time to time (sometimes due to me accidentally pushing in-the-moment demos). Apologies in advance!
+
 ## Persona Prompts
 The prompts I experimented with are grouped by _persona_. These are all in the `/personas` folder.
 - `/app-dev` - contains prompts useful for application developers,

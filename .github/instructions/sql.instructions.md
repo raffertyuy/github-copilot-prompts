@@ -38,7 +38,3 @@ applyTo: '**/*.sql'
 ## Version Control
 - Store all database scripts in version control.
 - Use clear and descriptive commit messages for database changes.
-
----
-# Database Schema
-When needed, the schema of this database is found in this [image diagram](/data-engineer/sample-db-schema.png).
