@@ -56,10 +56,6 @@ This requires to set a GitHub Actions secret called `TARGET_REPOSITORIES`, with 
     "pat": "PAT_HERE"
   },
   {
-    "url": "github.com/octodemo/octocat-supply-raffertyuy",
-    "pat": "PAT_HERE"
-  },
-  {
     "url": "dev.azure.com/raztype/Bookstore/_git/Bookstore",
     "pat": "PAT_HERE"
   }
