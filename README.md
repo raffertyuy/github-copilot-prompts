@@ -2,6 +2,9 @@
 
 This repo contains my collection of GitHub Copilot prompts for my personal learning and reference. I'm making this repo public in the hope that it may be useful to others.
 
+> [!IMPORTANT]
+> **_Many of the prompts here are not my own. I've added prompts I found useful as read through sources such as [GitHub](https://github.blog/ai-and-ml/github-copilot/), [VS Code](https://code.visualstudio.com/docs/copilot/copilot-customization) and [Open AI](https://cookbook.openai.com/examples/gpt4-1_prompting_guide). I've also added prompts that I've learned from people that I interact with. If you recognize your prompt here and would like me to credit you, please let me know. I will be happy to do so._**
+
 > [!WARNING]
 > I use this repo frequently for my demos as I share my learnings with others. You might see small changes from time to time (sometimes due to me accidentally pushing in-the-moment demos). Apologies in advance!
 
@@ -28,9 +31,6 @@ Each file will have a prefix:
 
 ## /.github Folder
 My `/.github` folder is organized according to my point of view on how it should be organized and potentially shared to large dev teams. I posted the TL;DR of my thoughts in this [blog](https://raffertyuy.com/raztype/ghcp-custom-prompts-structure/), but note that this repo is more updated than the blog.
-
->[!NOTE]
-> Not all of the prompt files in the `/.github` folder are my own. Many are copied from other sources such as [VS Code](https://code.visualstudio.com/docs/copilot/copilot-customization) and [Open AI](https://cookbook.openai.com/examples/gpt4-1_prompting_guide). 
 
 ## GitHub Actions
 This repo contains an experimental github action that will push the custom prompts in `/.github/**/*.md` to a list of target repos.
