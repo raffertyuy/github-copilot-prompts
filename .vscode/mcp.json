@@ -9,7 +9,7 @@
       "args": ["@playwright/mcp@latest"]
     },
     // The following lines are only here for reference. ADO is not used by this workspace.
-    // "azure-devops": {
+    // "ado": {
     //   "type": "stdio",
     //   "command": "npx",
     //   "args": ["-y", "@azure-devops/mcp", "${input:ado_org}"]
