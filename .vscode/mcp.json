@@ -1,25 +1,24 @@
 {
-  "servers": {
-    "context7": {
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"]
-    },
-    "playwright": {
-      "command": "npx",
-      "args": ["@playwright/mcp@latest"]
-    },
-    // The following lines are only here for reference. ADO is not used by this workspace.
-    // "ado": {
-    //   "type": "stdio",
-    //   "command": "npx",
-    //   "args": ["-y", "@azure-devops/mcp", "${input:ado_org}"]
-    // }
-  },
-  "inputs": [
-    // {
-    //   "id": "ado_org",
-    //   "type": "promptString",
-    //   "description": "Azure DevOps organization name  (e.g. 'contoso')"
-    // }
-  ]
+	"servers": {
+		"context7": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@upstash/context7-mcp"
+			],
+			"type": "stdio"
+		},
+		"playwright": {
+			"command": "npx",
+			"args": [
+				"@playwright/mcp@latest"
+			],
+			"type": "stdio"
+		},
+		"ms-learn": {
+			"url": "https://learn.microsoft.com/api/mcp",
+			"type": "http"
+		}
+	},
+	"inputs": []
 }
