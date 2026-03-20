@@ -41,5 +41,4 @@
 - Ensure CLI commands work in Windows environments.
 
 ### Additional Guidelines
-
-- Refer to the appropriate file in .github/instructions/ for specific language guidelines.
+- Refer to the appropriate language-specific file in `.github/instructions/` for detailed guidelines per language.

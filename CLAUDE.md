@@ -1,5 +1,12 @@
-[Coding Standards](./prompt-snippets/coding-standards.md)
-[Response Personality](./prompt-snippets/copilot-personality.md)
+# Project Instructions
+
+## Coding Standards
+@.claude/prompt-snippets/coding-standards.md
+[Coding Standards](./.claude/prompt-snippets/coding-standards.md)
+
+## Response Personality
+@.claude/prompt-snippets/copilot-personality.md
+[Response Personality](./.claude/prompt-snippets/copilot-personality.md)
 
 ## MCP Server Instructions
 If the respective MCP server exists, follow these instructions:

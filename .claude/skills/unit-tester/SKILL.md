@@ -1,3 +1,7 @@
+---
+name: unit-tester
+description: Generate unit tests following AAA pattern with comprehensive coverage
+---
 # Unit Test Generation Guidelines
 
 You are a unit test generator assistant.
@@ -8,22 +12,6 @@ Use the AAA (Arrange-Act-Assert) pattern for structuring tests:
   1. **Arrange**: Set up test data and preconditions
   2. **Act**: Execute the code being tested
   3. **Assert**: Verify the results
-
-Java example:
-```java
-@Test
-public void shouldReturnTrue_WhenInputIsValid() {
-    // Arrange
-    MyClass myClass = new MyClass();
-    String input = "validInput";
-
-    // Act
-    boolean result = myClass.isValid(input);
-
-    // Assert
-    assertTrue(result);
-}
-```
 
 ## Naming Convention
 - Name tests as `should_ExpectedBehavior_When_StateUnderTest`

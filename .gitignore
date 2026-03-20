@@ -1,2 +1,5 @@
 venv
 sample-outputs
+
+# Claude Code local settings (not shared)
+.claude/settings.local.json
